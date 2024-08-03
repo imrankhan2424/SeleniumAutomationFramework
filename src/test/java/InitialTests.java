@@ -36,6 +36,6 @@ public class InitialTests {
         product.findElement(By.cssSelector("button:last-of-type")).click();
 
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".ng-animating")));
-
+        driver.findElement(By.cssSelector("button[routerLink*='cart']")).click();
     }
 }
