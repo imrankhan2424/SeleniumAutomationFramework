@@ -32,9 +32,10 @@ public class CartPage extends CommonSteps {
     }
 
     public CheckoutPage proceedToCheckout(){
-        waitTillElementisDisplayed(checkout,5);
+
 //        Actions mouse=new Actions(driver);
 //        mouse.moveToElement(checkout).click().build().perform();
+        waitTillElementisDisplayed(checkout,5);
         JavascriptExecutor jse=(JavascriptExecutor)driver;
         jse.executeScript("arguments[0].click()",checkout);
         return new CheckoutPage(driver);
