@@ -1,6 +1,7 @@
 package PageObjects;
 
 import ScriptUtils.CommonSteps;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -32,8 +33,10 @@ public class CartPage extends CommonSteps {
 
     public CheckoutPage proceedToCheckout(){
         waitTillElementisDisplayed(checkout,5);
-        Actions mouse=new Actions(driver);
-        mouse.moveToElement(checkout).click().build().perform();
+//        Actions mouse=new Actions(driver);
+//        mouse.moveToElement(checkout).click().build().perform();
+        JavascriptExecutor jse=(JavascriptExecutor)driver;
+        jse.executeScript("arguments[0].click()",checkout);
         return new CheckoutPage(driver);
     }
 

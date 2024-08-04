@@ -46,14 +46,14 @@ public class BaseTest {
         driver.manage().window().maximize();
     }
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void launchApplication() throws IOException {
         setUp();
         landingPage=new LandingPage(driver);
         landingPage.goTo("https://rahulshettyacademy.com/client/");
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown(){
         driver.quit();
     }
