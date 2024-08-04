@@ -46,11 +46,12 @@ public class ProductCatalogue extends AbstractComponents {
         product.findElement(By.cssSelector("button:last-of-type")).click();
     }
 
-    public void goToCart(){
+    public CartPage goToCart(){
         waitTillInvisibilityofElement(SpinningLoader,5);
         waitTillInvisibilityofElement(ToastMessage,5);
         waitTillElementisDisplayed(cartIcon,5);
         waitTillElementisClickable(cartIcon,5);
         cart.click();
+        return new CartPage(driver);
     }
 }

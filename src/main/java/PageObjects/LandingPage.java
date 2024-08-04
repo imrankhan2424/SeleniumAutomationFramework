@@ -27,10 +27,11 @@ public class LandingPage extends AbstractComponents {
         driver.get(url);
     }
 
-    public void login(String username,String pass){
+    public ProductCatalogue login(String username, String pass){
         email.sendKeys(username);
         password.sendKeys(pass);
         submit.click();
+        return new ProductCatalogue(driver);
     }
 
 }

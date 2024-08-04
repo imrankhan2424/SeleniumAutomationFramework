@@ -16,22 +16,17 @@ public class EcommerceTest {
 
         LandingPage landingPage=new LandingPage(driver);
         landingPage.goTo("https://rahulshettyacademy.com/client/");
-        landingPage.login("yobeje7646@eixdeal.com","Test@1234");
 
-
-        ProductCatalogue productCatalogue=new ProductCatalogue(driver);
+        ProductCatalogue productCatalogue=landingPage.login("yobeje7646@eixdeal.com","Test@1234");
         productCatalogue.addProduct(productName);
-        productCatalogue.goToCart();
 
-        CartPage cartPage=new CartPage(driver);
+        CartPage cartPage=productCatalogue.goToCart();
         Assert.assertTrue(cartPage.verifyProductinCart(productName));
-        cartPage.proceedToCheckout();
 
-        CheckoutPage checkoutPage=new CheckoutPage(driver);
+        CheckoutPage checkoutPage=cartPage.proceedToCheckout();
         checkoutPage.searchforCountry("India");
-        checkoutPage.placeOrder();
 
-        ConfirmationPage confirmationPage=new ConfirmationPage(driver);
+        ConfirmationPage confirmationPage=checkoutPage.placeOrder();
         Assert.assertTrue(confirmationPage.getMessage().equalsIgnoreCase("Thankyou for the order."));
 
         driver.quit();

@@ -30,10 +30,11 @@ public class CartPage extends AbstractComponents {
 
     }
 
-    public void proceedToCheckout(){
+    public CheckoutPage proceedToCheckout(){
         waitTillElementisDisplayed(checkout,5);
         Actions mouse=new Actions(driver);
         mouse.moveToElement(checkout).click().build().perform();
+        return new CheckoutPage(driver);
     }
 
 

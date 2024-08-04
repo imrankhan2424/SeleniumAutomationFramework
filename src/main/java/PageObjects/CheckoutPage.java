@@ -30,9 +30,10 @@ public class CheckoutPage extends AbstractComponents {
         selectoption.click();
     }
 
-    public void placeOrder(){
+    public ConfirmationPage placeOrder(){
         JavascriptExecutor jse=(JavascriptExecutor) driver;
         waitTillElementisDisplayed(placeOrder,2);
         jse.executeScript("arguments[0].click()",placeOrder);
+        return new ConfirmationPage(driver);
     }
 }
