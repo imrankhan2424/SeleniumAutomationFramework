@@ -31,6 +31,7 @@ public class LandingPage extends CommonSteps {
     }
 
     public ProductCatalogue login(String username, String pass){
+        waitTillElementisDisplayed(email,5);
         email.sendKeys(username);
         password.sendKeys(pass);
         submit.click();

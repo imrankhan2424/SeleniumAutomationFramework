@@ -55,7 +55,7 @@ public class CommonSteps {
 
     }
 
-    @FindBy(css="button[routerlink*='myorders']")
+    @FindBy(css="button[routerlink*='orders']")
     WebElement orders;
     public OrdersPage goToOrdersPage(){
         waitTillElementisDisplayed(orders,5);
