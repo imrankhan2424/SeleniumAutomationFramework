@@ -41,8 +41,6 @@ public class CommonSteps {
         element.sendKeys(enterValue);
     }
 
-
-
     public void waitTillElementisClickable(WebElement elemBy,int seconds){
         WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(Long.valueOf(seconds)));
         wait.until(ExpectedConditions.elementToBeClickable(elemBy));

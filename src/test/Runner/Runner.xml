@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite parallel="tests" name="Ecommerce Validation">
+    <listeners>
+        <listener class-name="Tests.Listeners"/>
+    </listeners>
     <test thread-count="5" name="Submit Verification">
         <classes>
             <class name="Tests.EcommerceTest"/>

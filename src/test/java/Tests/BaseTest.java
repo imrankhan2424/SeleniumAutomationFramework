@@ -2,15 +2,17 @@ package Tests;
 
 import PageObjects.LandingPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -40,10 +42,19 @@ public class BaseTest {
                 break;
 
             default:
-                System.out.println("Invalid BrowserName set in Global.properites");
+                System.out.println("Invalid BrowserName set in Global.properties");
                 break;
         }
         driver.manage().window().maximize();
+    }
+
+    public String getScreenshot(String testCaseName,WebDriver driver) throws IOException {
+        String path="./reports/"+testCaseName+".png";
+        TakesScreenshot ts=(TakesScreenshot) driver;
+        File src=ts.getScreenshotAs(OutputType.FILE);
+        File dest=new File(path);
+        FileUtils.copyFile(src,dest);
+        return path;
     }
 
     @BeforeMethod(alwaysRun = true)
