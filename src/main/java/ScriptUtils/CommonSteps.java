@@ -1,8 +1,10 @@
 package ScriptUtils;
 
+import PageObjects.OrdersPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -51,6 +53,15 @@ public class CommonSteps {
         WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(Long.valueOf(seconds)));
         wait.until(ExpectedConditions.invisibilityOf(elemBy));
 
+    }
+
+    @FindBy(css="button[routerlink*='myorders']")
+    WebElement orders;
+    public OrdersPage goToOrdersPage(){
+        waitTillElementisDisplayed(orders,5);
+        orders.click();
+        OrdersPage ordersPage=new OrdersPage(driver);
+        return ordersPage;
     }
 
 
