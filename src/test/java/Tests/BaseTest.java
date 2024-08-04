@@ -20,7 +20,7 @@ public class BaseTest {
     LandingPage landingPage;
     public void setUp() throws IOException {
         Properties prop=new Properties();
-        FileInputStream fis=new FileInputStream("src/test/Global.properties");
+        FileInputStream fis=new FileInputStream("src/main/java/Resources/Global.properties");
         prop.load(fis);
 
         switch (prop.getProperty("browser").toLowerCase()){
