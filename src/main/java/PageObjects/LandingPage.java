@@ -23,6 +23,9 @@ public class LandingPage extends CommonSteps {
     @FindBy(id="login")
     WebElement submit;
 
+    @FindBy(css="[class*='flyInOut']")
+    WebElement errorMessage;
+
     public void goTo(String url){
         driver.get(url);
     }
@@ -32,6 +35,11 @@ public class LandingPage extends CommonSteps {
         password.sendKeys(pass);
         submit.click();
         return new ProductCatalogue(driver);
+    }
+
+    public String getErrorMessage(){
+        waitTillElementisDisplayed(errorMessage,5);
+        return errorMessage.getText();
     }
 
 }
