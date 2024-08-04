@@ -1,4 +1,4 @@
-package UtilComponent;
+package ScriptUtils;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,9 +9,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class AbstractComponents {
+public class CommonSteps {
     WebDriver driver;
-    public AbstractComponents(WebDriver driver){
+    public CommonSteps(WebDriver driver){
         this.driver=driver;
     }
 

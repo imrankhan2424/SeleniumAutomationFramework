@@ -1,13 +1,13 @@
 package PageObjects;
 
-import UtilComponent.AbstractComponents;
+import ScriptUtils.CommonSteps;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CheckoutPage extends AbstractComponents {
+public class CheckoutPage extends CommonSteps {
     WebDriver driver;
     public CheckoutPage(WebDriver driver) {
         super(driver);

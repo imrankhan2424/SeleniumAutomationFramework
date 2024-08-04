@@ -1,6 +1,6 @@
 package PageObjects;
 
-import UtilComponent.AbstractComponents;
+import ScriptUtils.CommonSteps;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class CartPage extends AbstractComponents {
+public class CartPage extends CommonSteps {
     WebDriver driver;
 
     public CartPage(WebDriver driver) {

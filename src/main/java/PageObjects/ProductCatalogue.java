@@ -1,6 +1,6 @@
 package PageObjects;
 
-import UtilComponent.AbstractComponents;
+import ScriptUtils.CommonSteps;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class ProductCatalogue extends AbstractComponents {
+public class ProductCatalogue extends CommonSteps {
     WebDriver driver;
     public ProductCatalogue(WebDriver driver){
         super(driver);

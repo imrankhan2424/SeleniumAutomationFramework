@@ -1,12 +1,12 @@
 package PageObjects;
 
-import UtilComponent.AbstractComponents;
+import ScriptUtils.CommonSteps;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ConfirmationPage extends AbstractComponents {
+public class ConfirmationPage extends CommonSteps {
     WebDriver driver;
     public ConfirmationPage(WebDriver driver) {
         super(driver);

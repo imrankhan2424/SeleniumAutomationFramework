@@ -1,12 +1,12 @@
 package PageObjects;
 
-import UtilComponent.AbstractComponents;
+import ScriptUtils.CommonSteps;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LandingPage extends AbstractComponents {
+public class LandingPage extends CommonSteps {
     WebDriver driver;
     public LandingPage(WebDriver driver){
         super(driver);
