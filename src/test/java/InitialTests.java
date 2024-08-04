@@ -49,7 +49,8 @@ public class InitialTests {
         List<WebElement> k=wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(".cartSection h3")));
         Assert.assertTrue(k.stream().anyMatch(s->s.getText().equals(productName)));
 
-        WebElement checkout=driver.findElement(By.cssSelector(".subtotal button"));
+        WebElement checkout=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".subtotal button")));
+//        wait.until(ExpectedConditions.elementToBeClickable(checkout)).click();
         Actions mouse=new Actions(driver);
         mouse.moveToElement(checkout).click().build().perform();
 
