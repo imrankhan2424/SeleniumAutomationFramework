@@ -33,6 +33,7 @@ public class LandingPage extends CommonSteps {
     public ProductCatalogue login(String username, String pass){
         waitTillElementisDisplayed(email,5);
         email.sendKeys(username);
+        waitTillElementisDisplayed(password,5);
         password.sendKeys(pass);
         submit.click();
         return new ProductCatalogue(driver);
