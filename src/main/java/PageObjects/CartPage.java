@@ -39,6 +39,4 @@ public class CartPage extends CommonSteps {
         jse.executeScript("arguments[0].click()",checkout);
         return new CheckoutPage(driver);
     }
-
-
 }
