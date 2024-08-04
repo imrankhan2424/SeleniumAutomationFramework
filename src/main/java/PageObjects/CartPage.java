@@ -32,7 +32,6 @@ public class CartPage extends CommonSteps {
     }
 
     public CheckoutPage proceedToCheckout(){
-
 //        Actions mouse=new Actions(driver);
 //        mouse.moveToElement(checkout).click().build().perform();
         waitTillElementisDisplayed(checkout,5);
